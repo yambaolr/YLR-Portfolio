@@ -47,3 +47,60 @@ nav .name {
     color: #edb707;
     border-bottom: 2px solid #facc15;
 }
+
+/***************** Footer *****************/
+footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 1.5rem 3rem;
+    width: 100%;
+    background-color: #141414;
+    color: #b1b1b1;
+    border-top: 1px solid #4b4b4bb2;
+    margin-top: 4rem;
+}
+
+.left-side {
+    display: flex;
+    align-items: flex-start;
+}
+
+.right-side {
+    display: flex;
+    flex-direction: column; 
+    align-items: flex-end;
+    gap: 1rem;
+}
+
+footer h5 {
+    margin: 0.5rem 0;
+}
+
+.icon {
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+}
+
+.social-media {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.page-links {
+    margin-top: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 1.2rem;
+    
+}
+
+.page-links a {
+    color: #edb707;
+}
+
+.page-links a:hover {
+    color: #fff9e0;
+}
