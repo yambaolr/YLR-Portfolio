@@ -1,8 +1,12 @@
 <nav>
-  <a routerLink="/" routerLinkActive="active">Home</a>
-  <a routerLink="/about" routerLinkActive="active">About</a>
-  <a routerLink="/projects" routerLinkActive="active">Projects</a>
-  <a routerLink="/resume" routerLinkActive="active">Resume</a>
-  <a routerLink="/contact" routerLinkActive="active">Contact</a>
+  <img src="../assets/images/Yambao-personal-logo.png" alt="Logo" class="logo" />
+  <p class="name">yambaolr</p>
+  <div class="nav-links">
+    <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">home/</a>
+    <a routerLink="/about" routerLinkActive="active">about/</a>
+    <a routerLink="/projects" routerLinkActive="active">projects/</a>
+    <a routerLink="/resume" routerLinkActive="active">resume/</a>
+    <a routerLink="/contact" routerLinkActive="active">contact/</a>
+  </div>
 </nav>
 <router-outlet />
