@@ -1,0 +1,223 @@
+/***************** Hero Section *****************/
+.hero-section {
+    margin: 3em auto;
+    background: linear-gradient(180deg, #303030 0%, #2a2a2a 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: flex-start;
+    height: 45%;
+    width: 70%;
+    text-align: right;
+    border: 1px solid #4b4b4bb2;
+    border-left: 5px solid #edb707;
+    padding: 2em;
+}
+
+.hero-section h1 {
+    font-size: 4rem;
+    color: #edb707;
+    margin-bottom: 0.5rem;
+    color: #edb707;
+    font-weight: bold;
+}
+
+.hero-section h3 {
+    font-size: 1.5rem;
+    color: #9b9b9b;
+    font-style: italic;
+    margin-bottom: 1.5rem;
+}
+
+.hero-section p {
+    font-size: 1.2rem;
+    color: #f1f1f1;
+    margin-top: 1rem;
+    line-height: 1.6;
+}
+
+.hero-actions {
+    margin-top: 2em;
+}
+
+.hero-actions .btn {
+    padding: 0.75em 1.5em;
+    font-size: 1rem;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+    border: 1px solid #edb707;
+    background-color:#4b4b4bb2;
+    margin: 0 0.5em;
+}
+
+.hero-actions a {
+    color: #edb707;
+}
+
+.hero-actions .btn:hover {
+    background-color: #edb707;
+    color: #141414;
+}
+
+.divider {
+    width: 80%;
+    margin: 4rem auto;
+    border: none;
+    border-top: 1px solid #4b4b4bb2;
+}
+
+/***************** About Section *****************/
+.about-section {
+    margin: 4rem auto;
+    padding: 2rem;
+    background: linear-gradient(180deg, #303030 0%, #2a2a2a 100%);
+    border: 1px solid #4b4b4bb2;
+    width: 80%;
+    text-align: center;
+}
+
+.about-section h2 {
+    font-size: 2.5rem;
+    color: #edb707;
+    margin: 1.5rem;
+    text-align: center;
+}
+
+.about-section p {
+    font-size: 1.1rem;
+    color: #b1b1b1;
+    line-height: 1.5;
+    margin: 0 auto 2rem;
+    font-style: italic;
+}
+
+.graph-bars {
+    position: relative;
+    height: 320px;
+    width: 80%;
+    margin: 3rem auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding: 1rem;
+    background:
+        repeating-linear-gradient(
+            to top,
+            #989898,
+            #989898 1px,
+            transparent 1px,
+            transparent 60px
+        );
+    border-left: 2px solid #facc15;
+    border-bottom: 2px solid #facc15;
+}
+
+.graph-bar-wrapper {
+    position: relative;
+    width: 32%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.graph-bar {
+    position: absolute;
+    bottom: 0; 
+    width: 70%;
+    background-color: #1f1f1f;
+    border: 2px solid #facc15;
+    color: #facc15;
+    text-decoration: none;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 0.75rem;
+
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.bar-about { height: 60%; }
+.bar-projects { height: 90%; }
+.bar-resume { height: 75%; }
+.bar-contact { height: 50%; }
+
+.graph-bar:hover {
+    transform: translateY(-6px) scale(1.02);
+    background-color: #facc15;
+    color: #000;
+    box-shadow: 0 8px 15px rgba(0,0,0,0.3);
+}
+
+.graph-bar:hover .bar-desc {
+    color: #242424;
+}
+
+.graph-bar span {
+    font-weight: bold;
+    letter-spacing: 0.05em;
+}
+
+.bar-title {
+    font-weight: bold;
+    font-size: 1rem;
+    margin-bottom: 0.25rem;
+}
+
+.bar-desc {
+    font-size: 0.75rem;
+    color: #facc15b3;
+    text-align: center;
+    line-height: 1.2;
+}
+
+/***************** Contact Section *****************/
+.contact-section {
+    margin: 4rem auto;
+    padding: 3rem 2.5rem;
+    width: 75%;
+    background: linear-gradient(180deg, #303030 0%, #2a2a2a 100%);
+    border: 1px solid #4b4b4bb2;
+    border-right: 5px solid #edb707;
+    text-align: center;
+}
+
+.contact-section h2 {
+    font-size: 2.5rem;
+    color: #edb707;
+    margin-bottom: 1rem;
+}
+
+.contact-section p {
+    font-size: 1.1rem;
+    color: #e0e0e0;
+    line-height: 1.7;
+    max-width: 700px;
+    margin: 0 auto 2rem;
+}
+
+.contact-section .btn {
+    display: inline-block;
+    padding: 0.8em 2em;
+    font-size: 1.1rem;
+    font-weight: bold;
+
+    color: #edb707;
+    text-decoration: none;
+
+    background-color: #1f1f1f;
+    border: 1px solid #edb707;
+    border-radius: 4px;
+
+    transition: background-color 0.3s ease,
+                color 0.3s ease,
+                transform 0.3s ease;
+}
+
+.contact-section .btn:hover {
+    background-color: #edb707;
+    color: #141414;
+    transform: translateY(-3px);
+}

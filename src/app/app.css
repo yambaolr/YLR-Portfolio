@@ -6,22 +6,23 @@
 nav {
     display: flex;
     align-items: center;
-    padding: 2rem 2rem;
-    background-color: #333;
+    padding: 1rem 2rem;
+    background-color: #141414;
     color: #fff;
-    font-family: monospace;
     position: sticky;
     top: 0;
+    z-index: 1000;
     overflow: hidden;
+    border-bottom: 1px solid #4b4b4bb2;
 }
 
 nav .logo {
-    font-size: 1.5rem;
-    font-weight: bold;
+    width: 72px;
+    height: 72px;
 }
 
 nav .name {
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     margin-left: 1rem;
 }
 
@@ -35,13 +36,14 @@ nav .name {
     color: #fff;
     text-decoration: none;
     margin-left: 2.5rem;
-    font-size: 1.2rem;
+    font-size: 1.5rem;
 }
 
 .nav-links a:hover {
-    color: #71df9b;
+    color: #9b9b9b;
 }
 
 .nav-links a.active {
-    color: #39e47b;
+    color: #edb707;
+    border-bottom: 2px solid #facc15;
 }
