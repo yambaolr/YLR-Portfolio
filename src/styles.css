@@ -8,3 +8,11 @@ body {
     background-color: #191919!important;
     color: #fff!important;
 }
+
+/***************** General-use *****************/
+.divider {
+    width: 80%;
+    margin: 4rem auto;
+    border: none;
+    border-top: 1px solid #4b4b4bb2;
+}
