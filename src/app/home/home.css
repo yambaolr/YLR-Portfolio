@@ -36,30 +36,9 @@
     line-height: 1.6;
 }
 
-.hero-actions {
-    margin-top: 2em;
-}
-
-.hero-actions .btn {
-    padding: 0.75em 1.5em;
-    font-size: 1rem;
-    text-decoration: none;
-    font-weight: bold;
-    border-radius: 4px;
-    transition: background-color 0.3s ease;
-    border: 1px solid #edb707;
-    background-color:#4b4b4bb2;
-    margin: 0 0.5em;
-}
-
 .hero-actions a {
-    color: #edb707;
-}
-
-.hero-actions .btn:hover {
-    background-color: #edb707;
-    color: #141414;
-    font-weight: bold;
+    margin-top: 2em;
+    margin-left: 1em;
 }
 
 .divider {
@@ -67,6 +46,75 @@
     margin: 4rem auto;
     border: none;
     border-top: 1px solid #4b4b4bb2;
+}
+
+/***************** Skills Section *****************/
+.featured-projects {
+    width: 80%;
+    margin: 4rem auto;
+    padding: 3rem 2.5rem;
+    text-align: center;
+    background: linear-gradient(180deg, #303030 0%, #2a2a2a 100%);
+    border: 1px solid #4b4b4bb2;
+}
+
+.featured-projects h2 {
+    font-size: 2.5rem;
+    color: #edb707;
+    margin: 1.5rem;
+    text-align: center;
+}
+
+.featured-projects .text-muted {
+    font-size: 1.1rem;
+    color: #b1b1b1!important;
+    line-height: 1.5;
+    margin: 0 auto 2rem;
+    font-style: italic;
+}
+
+.project-card {
+    background-color: #1f1f1f;
+    border: 1px solid #4b4b4bb2;
+    color: #e0e0e0;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 100%;
+}
+
+.project-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+}
+
+.project-card .card-img-top {
+    height: 180px;
+    object-fit: cover;
+    border-bottom: 1px solid #4b4b4bb2;
+}
+
+.project-card .card-title {
+    color: #facc15;
+    font-weight: bold;
+    margin-bottom: 0.75rem;
+}
+
+.project-card .card-text {
+    font-size: 0.95rem;
+    color: #cfcfcf;
+}
+
+.project-card .btn-outline-warning {
+    border-color: #edb707;
+    color: #edb707;
+}
+
+.project-card .btn-outline-warning:hover {
+    background-color: #edb707;
+    color: #141414;
+}
+
+.view-all a{
+    margin-top: 2em;
 }
 
 /***************** About Section *****************/
@@ -200,26 +248,45 @@
     margin: 0 auto 2rem;
 }
 
-.contact-section .btn {
+/***************** Buttons *****************/
+
+.btn-primary {
     display: inline-block;
     padding: 0.8em 2em;
     font-size: 1.1rem;
     font-weight: bold;
-
     color: #edb707;
     text-decoration: none;
-
     background-color: #1f1f1f;
     border: 1px solid #edb707;
     border-radius: 4px;
-
     transition: background-color 0.3s ease,
                 color 0.3s ease,
                 transform 0.3s ease;
 }
 
-.contact-section .btn:hover {
+.btn-primary:hover {
     background-color: #edb707;
     color: #141414;
     transform: translateY(-3px);
+}
+
+.btn-secondary {
+    display: inline-block;
+    padding: 0.8em 2em;
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #9b9b9b;
+    text-decoration: none;
+    background-color: transparent;
+    border: 1px solid #9b9b9b;
+    border-radius: 4px;
+    transition: background-color 0.3s ease,
+                color 0.3s ease,
+                transform 0.3s ease;
+}
+
+.btn-secondary:hover {
+    background-color: #9b9b9b;
+    color: #141414;
 }
