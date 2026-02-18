@@ -9,10 +9,60 @@ body {
     color: #fff!important;
 }
 
-/***************** General-use *****************/
+/* === General Use === */
 .divider {
-    width: 80%;
+    width: 85%;
+    height: 2px;
     margin: 4rem auto;
     border: none;
-    border-top: 1px solid #4b4b4bb2;
+    background: linear-gradient(
+        to right,
+        transparent,
+        rgba(237,183,7,0.6),
+        transparent
+    );
+    box-shadow: 0 0 12px rgba(237,183,7,0.6);
 }
+
+/* === Buttons === */
+.btn-primary {
+    display: inline-block;
+    padding: 0.8em 2em;
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #edb707;
+    text-decoration: none;
+    background-color: #1f1f1f;
+    border: 1px solid #edb707;
+    border-radius: 4px;
+    transition: background-color 0.3s ease,
+                color 0.3s ease,
+                transform 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #edb707;
+    color: #141414;
+    transform: translateY(-3px) scale(1.02);
+}
+
+.btn-secondary {
+    display: inline-block;
+    padding: 0.8em 2em;
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #9b9b9b;
+    text-decoration: none;
+    background-color: transparent;
+    border: 1px solid #9b9b9b;
+    border-radius: 4px;
+    transition: background-color 0.3s ease,
+                color 0.3s ease,
+                transform 0.3s ease;
+}
+
+.btn-secondary:hover {
+    background-color: #9b9b9b;
+    color: #141414;
+}
+

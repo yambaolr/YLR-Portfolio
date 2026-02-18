@@ -1,4 +1,4 @@
-/***************** About Hero Section *****************/
+/* === Page Title === */
 .page-title {
     width: 80%;
     margin: 3rem auto 2rem;
@@ -7,19 +7,63 @@
     text-align: left;
 }
 
+/* === Hero Section === */
 .about-hero {
-    width: 80%;
+    width: 90%;
     margin: 0 auto 4rem;
     padding: 3rem;
     display: flex;
     gap: 3rem;
     align-items: center;
-
-    background: linear-gradient(180deg, #303030 0%, #2a2a2a 100%);
-    border: 1px solid #4b4b4bb2;
-    border-top: 5px solid #edb707;
+    background: linear-gradient(180deg, #1a1a1a 0%, #111 100%);
+    border: 1px solid #3a3a3a;
+    border-left: 6px solid #edb707;
 }
 
+.hero-content {
+    flex: 1;
+    color: #ddd;
+}
+
+.hero-title {
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: #edb707;
+    text-shadow: 2px 2px 6px rgba(24, 24, 24, 0.7);
+    margin-bottom: 1rem;
+}
+
+.hero-description {
+    font-size: 1.1rem;
+    line-height: 1.7;
+}
+
+.hero-description .highlight {
+    color: #edb707;
+    font-weight: 600;
+    background-color: rgba(237,183,7,0.08);
+    padding: 0 0.2rem;
+    border-radius: 3px;
+}
+
+.hero-subtitle {
+    font-size: 1.3rem;
+    color: #edb707;
+    margin-bottom: 0.5rem;
+}
+
+.hero-description .bold {
+    font-weight: 700;
+    color: #d7a500;
+}
+
+.hero-content ul {
+    margin-left: 1.5em;
+    color: #b1b1b1;
+    line-height: 1.6;
+}
+
+/* === Hero Image === */
 .hero-image {
     flex: 0 0 260px;
     display: flex;
@@ -35,66 +79,7 @@
     background-color: #1f1f1f;
 }
 
-.hero-content {
-    flex: 1;
-    color: #e0e0e0;
-}
-
-.hero-title {
-    font-size: 2.2rem;
-    color: #facc15;
-    margin-bottom: 1rem;
-    font-weight: bold;
-}
-
-.hero-description {
-    font-size: 1.1rem;
-    line-height: 1.7;
-    color: #d0d0d0;
-    margin-left: 1em;
-    margin-bottom: 1em;
-
-}
-
-.hero-description .highlight {
-    color: #facc15;
-    font-weight: 600;
-    background-color: rgba(250, 204, 21, 0.086);
-    padding: 0 0.2rem;
-    border-radius: 3px;
-    transition: background-color 0.3s ease;
-}
-
-.hero-description .highlight:hover {
-    background-color: rgba(250, 204, 21, 0.3);
-}
-
-.hero-subtitle {
-    font-size: 1.3rem;
-    color: #edb707;
-    margin-bottom: 0.5rem;
-}
-
-.hero-description .bold {
-    font-weight: 700;
-    color: #d7a500;
-}
-
-.hero-content ul {
-    margin-left: 1.5em; 
-    color: #b1b1b1;
-    line-height: 1.6;
-    list-style-type: disc;
-}
-
-.hero-content p:last-of-type {
-    font-size: 1rem;
-    color: #b1b1b1;
-    line-height: 1.6;
-}
-
-
-/***************** Skills Section *****************/
+/* === ERD Skills === */
 .erd-skills {
     background-color: #2c2c2c;
     padding: 5em;
@@ -106,7 +91,7 @@
     position: relative;
 }
 
-.erd-title{
+.erd-title {
     font-size: 2.5rem;
     color: #edb707;
     text-align: center;
@@ -173,31 +158,13 @@
     stroke-width: 2;
 }
 
-/* hide lines in erd section in other views*/
-@media (max-width: 1100px) {
-    .erd-container {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .erd-entity {
-        width: 90%; 
-        max-width: 350px;
-    }
-
-    .erd-lines {
-        display: none; 
-    }
-}
-
-/***************** Soft Skills Section *****************/
-
+/* === Soft Skills === */
 .soft-skills {
-    background-color: #2c2c2c;
-    padding: 5em;
-    border-right: 5px solid #edb707;
     width: 80%;
     margin: 3rem auto;
+    padding: 4rem;
+    background: linear-gradient(180deg, #2c2c2c 0%, #1f1f1f 100%);
+    border-left: 6px solid #edb707;
 }
 
 .soft-title {
@@ -238,19 +205,22 @@
 .bar-fill {
     height: 100%;
     background: linear-gradient(180deg, #facc15 0%, #eab308 50%, #d4a106 100%);
-    box-shadow: 0 0 8px rgba(250, 204, 21, 0.3);
+    box-shadow: 0 0 8px rgba(250,204,21,0.3);
     border-radius: 10px;
     transition: width 1s ease-in-out;
 }
 
-/***************** Certifications Section *****************/
+.skill-bar:hover .bar-fill {
+    box-shadow: 0 0 12px rgba(250,204,21,0.5);
+}
 
+/* === Certifications === */
 .certifications {
     width: 80%;
     margin: 3rem auto;
     padding: 4rem;
     background-color: #2c2c2c;
-    border-bottom: 5px solid #edb707;
+    border-left: 5px solid #edb707;
 }
 
 .cert-title {
@@ -269,7 +239,8 @@
 .cert-card {
     background-color: #1f1f1f;
     padding: 2rem;
-    border: 1px solid #444;
+    border: 1px solid #4b4b4bb2;
+    border-left: 6px solid #edb707;
     border-radius: 8px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -277,7 +248,6 @@
 .cert-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 8px 15px rgba(0,0,0,0.4);
-    border-color: #edb707;
 }
 
 .cert-card h3 {
@@ -319,4 +289,56 @@
 .cert-button:hover {
     background-color: #facc15;
     color: #1f1f1f;
+}
+
+/* === Viewports === */
+@media (max-width: 768px) {
+    .about-hero {
+        flex-direction: column;
+        align-items: center;
+        padding: 2rem;
+    }
+
+    .hero-image {
+        order: -1;
+        margin-bottom: 2rem;
+    }
+
+    .hero-content {
+        text-align: center;
+        margin: 0;
+    }
+
+    .hero-content ul {
+        margin-left: 0;
+        padding: 0;
+    }
+
+    .cert-grid {
+        grid-template-columns: 1fr; 
+        justify-items: center;
+        gap: 1.5rem;
+    }
+
+    .cert-card {
+        width: 90%;
+        max-width: 400px;
+    }
+
+}
+
+@media (max-width: 1100px) {
+    .erd-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .erd-entity {
+        width: 90%;
+        max-width: 350px;
+    }
+
+    .erd-lines {
+        display: none;
+    }
 }

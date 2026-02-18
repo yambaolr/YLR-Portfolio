@@ -3,6 +3,7 @@
     padding: 0;
 }
 
+/* === Nav === */
 nav {
     display: flex;
     align-items: center;
@@ -48,7 +49,7 @@ nav .name {
     border-bottom: 2px solid #facc15;
 }
 
-/***************** Footer *****************/
+/* === Footer === */
 footer {
     display: flex;
     justify-content: space-between;
@@ -103,4 +104,23 @@ footer h5 {
 
 .page-links a:hover {
     color: #fff9e0;
+}
+
+/* === BG === */
+.global-bg {
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    background-color: #0f0f0f;
+}
+
+.global-bg::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+        linear-gradient(rgba(237,183,7,0.03) 1px, transparent 1px),
+        linear-gradient(to right, rgba(237,183,7,0.03) 1px, transparent 1px);
+    background-size: 60px 60px;
 }
