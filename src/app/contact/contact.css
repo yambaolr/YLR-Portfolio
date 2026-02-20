@@ -162,6 +162,7 @@ small {
 .resume-section {
     width: 80%;
     margin: 4rem auto;
+    margin-bottom: 6em;
     padding: 3rem;
     background: linear-gradient(180deg, #303030 0%, #2a2a2a 100%);
     border: 1px solid #4b4b4bb2;
@@ -220,6 +221,16 @@ small {
     .contact-item {
         justify-content: center;
         gap: 1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .contact-form {
+        width: 100%;
+    }
+
+    .contact-form button {
+        width: 100%;
     }
 }
 

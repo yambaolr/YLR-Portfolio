@@ -1,32 +1,72 @@
 <nav>
-  <img src="images/logo.png" alt="Logo" class="logo" />
-  <p class="name">yambaolr</p>
-  <div class="nav-links">
-    <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">home/</a>
-    <a routerLink="/about" routerLinkActive="active">about/</a>
-    <a routerLink="/projects" routerLinkActive="active">projects/</a>
-    <a routerLink="/contact" routerLinkActive="active">contact/</a>
+    <a routerLink="/" class="logo-link">
+      <img src="images/logo.png" alt="Logo" class="logo" />
+      <span class="name">yambaolr</span>
+    </a>
+
+    <!-- Hamburger -->
+    <button class="hamburger" (click)="toggleMenu()">
+      <span [class.open]="isMenuOpen"></span>
+      <span [class.open]="isMenuOpen"></span>
+      <span [class.open]="isMenuOpen"></span>
+    </button>
+
+    <!-- Nav Links -->
+    <div class="nav-links" [class.open]="isMenuOpen">
+      <a routerLink="/" routerLinkActive="active"
+        [routerLinkActiveOptions]="{exact: true}"
+        (click)="closeMenu()">home/</a>
+
+      <a routerLink="/about" routerLinkActive="active"
+        (click)="closeMenu()">about/</a>
+
+      <a routerLink="/projects" routerLinkActive="active"
+        (click)="closeMenu()">projects/</a>
+
+      <a routerLink="/contact" routerLinkActive="active"
+        (click)="closeMenu()">contact/</a>
   </div>
 </nav>
 
 <div class="global-bg"></div>
-<router-outlet />
+<div class="main-content">
+  <router-outlet></router-outlet>
+</div>
 
 <footer>
-  <div class="left-side">
-    <h5>© 2026 | yambaolr </h5>
-  </div>
-    <div class="right-side">
-      <div class="social-media">
-        <a href="mailto:yambaolorinrobelle@gmail.com" target="_blank"><img src="images/mail-icon.png" alt="GMail" class="icon"></a>
-        <a href="https://github.com/yambaolr/" target="_blank"><img src="images/github-icon.png" alt="GitHub" class="icon"/></a>
-        <a href="https://www.linkedin.com/in/yambaolr/" target="_blank"><img src="images/linkedin-icon.png" alt="LinkedIn" class="icon"/></a>
+  <div class="footer-container">
+
+    <div class="footer-terminal">
+      <div class="terminal-line">
+        <span class="prompt">$</span>
+        <span class="command">copyright</span>
+      </div>
+      <p class="terminal-output">
+        © {{ currentYear }} yambaolr — system stable ✓
     </div>
-    <div class="page-links">
-      <a routerLink="/">Home</a>
-      <a routerLink="/about">About</a>
-      <a routerLink="/projects">Projects</a>
-      <a routerLink="/contact">Contact</a>
+
+    <div class="footer-links">
+      <h4>Quick Links</h4>
+      <a routerLink="/">home/</a>
+      <a routerLink="/about">about/</a>
+      <a routerLink="/projects">projects/</a>
+      <a routerLink="/contact">contact/</a>
     </div>
+
+    <div class="footer-social">
+      <h4>Connect</h4>
+      <div class="social-icons">
+        <a href="mailto:yambaolorinrobelle@gmail.com" target="_blank">
+          <img src="images/mail-icon.png" alt="Mail" class="icon">
+        </a>
+        <a href="https://github.com/yambaolr/" target="_blank">
+          <img src="images/github-icon.png" alt="GitHub" class="icon">
+        </a>
+        <a href="https://www.linkedin.com/in/yambaolr/" target="_blank">
+          <img src="images/linkedin-icon.png" alt="LinkedIn" class="icon">
+        </a>
+      </div>
+    </div>
+
   </div>
 </footer>

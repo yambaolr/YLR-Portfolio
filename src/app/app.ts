@@ -9,12 +9,24 @@ import { RouterOutlet, RouterLink, RouterLinkActive, Router, NavigationEnd } fro
 })
 export class App {
   protected readonly title = signal('YLR-Portfolio');
-
+  isMenuOpen = false;
+  currentYear = new Date().getFullYear();
+  
   constructor(private router: Router) {
     this.router.events.subscribe(event => {
       if (event instanceof NavigationEnd) {
         window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
       }
     });
+  }
+
+  toggleMenu() {
+    this.isMenuOpen = !this.isMenuOpen;
+    document.body.classList.toggle('menu-open', this.isMenuOpen);
+  }
+
+  closeMenu() {
+    this.isMenuOpen = false;
+    document.body.classList.remove('menu-open');
   }
 }
