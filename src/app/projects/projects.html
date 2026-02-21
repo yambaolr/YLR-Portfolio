@@ -1,2 +1,82 @@
-<h1>Projects Page</h1>
-<p>View my projects here.</p>
+<section class="projects-section">
+    <div class="terminal-header">
+        <span class="dot red"></span>
+        <span class="dot yellow"></span>
+        <span class="dot green"></span>
+        <span class="terminal-title">projects.sql</span>
+    </div>
+
+    <div class="terminal-body">
+        <div class="cli-line">
+        <span class="prompt">[yambaolr@portfolio]:~$</span>
+        <span class="command">SELECT</span> * 
+        <span class="command">FROM</span> projects
+        </div>
+
+        <div class="cli-line">
+        <span class="command">WHERE</span> category =
+        <select (change)="filterProjects($event)">
+            <option value="ALL">'ALL'</option>
+            <option value="FULLSTACK">'FULLSTACK'</option>
+            <option value="API">'API'</option>
+            <option value="CMS">'CMS'</option>
+        </select>;
+        </div>
+
+        <div class="cli-output">
+        @if (isExecuting) {
+            <span class="executing">Executing query<span class="dots"></span></span>
+        } @else {
+            {{ rowsReturned }} row{{ rowsReturned === 1 ? '' : 's' }} in set ({{ executionTime }} sec)
+        }
+        </div>
+    </div>
+
+    @if(!isExecuting && filteredResults.length === 0) {
+        <div class="no-results">No projects found for the selected category.</div>
+    }
+
+    <div class="projects-container">
+        @for (project of filteredResults; track project.name) {
+        <div class="project-card">
+            <h2>{{ project.name }}</h2>
+            <p class="description">{{ project.description }}</p>
+            <div class="tech-stack">
+            <strong>Tech Stack:</strong>
+            @for (tech of project.techStack; track tech) {
+                <span class="tech">{{ tech }}</span>
+            }
+            </div>
+
+            <div class="images">
+            @for (img of project.images; track img) {
+                <img 
+                    [src]="img" 
+                    alt="Project screenshot" 
+                    class="clickable-image"
+                    (click)="openImage(img, project)">
+            }
+            </div>
+
+            <div class="links">
+            @if (project.liveDemo) {
+                <a [href]="project.liveDemo" target="_blank" class="btn">Live Demo</a>
+            }
+            @if (project.repository) {
+                <a [href]="project.repository" target="_blank" class="btn secondary">GitHub Repository</a>
+            }
+            </div>
+        </div>
+        }
+    </div>
+
+    @if(selectedImage) {
+        <div class="image-overlay" (click)="closeImage()">
+        <span class="close-btn" (click)="closeImage(); $event.stopPropagation()">×</span>
+        <span class="prev-btn" (click)="prevImage(); $event.stopPropagation()">&#60;</span>
+        <img [src]="selectedImage" alt="Expanded project image">
+        <span class="next-btn" (click)="nextImage(); $event.stopPropagation()">&#62;</span>
+        </div>
+    }
+
+</section>
