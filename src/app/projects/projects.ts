@@ -1,5 +1,6 @@
 import { Component, ChangeDetectorRef, OnInit, HostListener } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { Title, Meta } from '@angular/platform-browser';
 
 interface Project {
   name: string;
@@ -30,7 +31,7 @@ export class Projects implements OnInit {
   currentIndex: number = 0;
   allImages: string[] = [];
 
-  constructor(private cdr: ChangeDetectorRef) {}
+  constructor(private cdr: ChangeDetectorRef,private titleService: Title, private metaService: Meta) {}
 
   projects: Project[] = [
     {
@@ -99,6 +100,14 @@ export class Projects implements OnInit {
 
   ngOnInit() {
     this.runQuery();
+
+    // SEO
+    this.titleService.setTitle('yambaolr | Portfolio - Projects');
+    this.metaService.addTags([
+      { name: 'description', content: 'Explore the projects of Lorin Robelle Yambao (yambaolr), featuring academic and personal projects.'  },
+      { name: 'keywords', content: 'portfolio, projects, fullstack, API, CMS, web development' },
+      { name: 'author', content: 'Lorin Robelle Yambao' }
+    ]);
   }
 
   filterProjects(event: Event) {
@@ -162,5 +171,9 @@ export class Projects implements OnInit {
     if (event.key === 'ArrowRight') this.nextImage();
     if (event.key === 'ArrowLeft') this.prevImage();
     if (event.key === 'Escape') this.closeImage();
+  }
+
+  getSafeId(name: string): string {
+    return name.toLowerCase().replace(/\s+/g, '-');
   }
 }

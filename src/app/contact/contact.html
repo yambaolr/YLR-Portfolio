@@ -1,113 +1,102 @@
-<section class="contact-page">
+<main>
 
-    <h1 class="page-title">Contact</h1>
+    <section class="contact-page" aria-labelledby="contact-page-title">
+        <h1 id="contact-page-title" class="page-title">Contact</h1>
 
-    <div class="contact-container">
+        <div class="contact-container">
 
         <div class="contact-form">
-        <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" novalidate>
+            <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" novalidate aria-label="Contact Form">
 
-            <div class="form-group">
-            <label>Name</label>
-            <input type="text"
-                    formControlName="name"
-                    [class.invalid]="isSubmitted && f['name'].invalid" />
+            <fieldset>
+                <legend>Send me a message</legend>
 
-            @if (isSubmitted && f['name'].errors?.['required']) {
-                <small>Name is required.</small>
-            }
-            </div>
+                <div class="form-group">
+                <label for="contact-name">Name</label>
+                <input id="contact-name" type="text" formControlName="name" 
+                        [class.invalid]="isSubmitted && f['name'].invalid" 
+                        aria-required="true" aria-invalid="{{isSubmitted && f['name'].invalid}}" />
+                @if (isSubmitted && f['name'].errors?.['required']) {
+                    <small role="alert">Name is required.</small>
+                }
+                </div>
 
-            <div class="form-group">
-            <label>Email</label>
-            <input type="email"
-                    formControlName="email"
-                    [class.invalid]="isSubmitted && f['email'].invalid" />
+                <div class="form-group">
+                <label for="contact-email">Email</label>
+                <input id="contact-email" type="email" formControlName="email" 
+                        [class.invalid]="isSubmitted && f['email'].invalid" 
+                        aria-required="true" aria-invalid="{{isSubmitted && f['email'].invalid}}" />
+                @if (isSubmitted && f['email'].errors?.['required']) {
+                    <small role="alert">Email is required.</small>
+                }
+                @if (isSubmitted && f['email'].errors?.['email']) {
+                    <small role="alert">Invalid email format.</small>
+                }
+                </div>
 
-            @if (isSubmitted && f['email'].errors?.['required']) {
-                <small>Email is required.</small>
-            }
+                <div class="form-group">
+                <label for="contact-message">Message</label>
+                <textarea id="contact-message" rows="6" formControlName="message"
+                            [class.invalid]="isSubmitted && f['message'].invalid" 
+                            aria-required="true" aria-invalid="{{isSubmitted && f['message'].invalid}}"></textarea>
+                @if (isSubmitted && f['message'].errors?.['required']) {
+                    <small role="alert">Message is required.</small>
+                }
+                </div>
 
-            @if (isSubmitted && f['email'].errors?.['email']) {
-                <small>Invalid email format.</small>
-            }
-            </div>
+                <button type="submit" class="btn-primary">Submit</button>
 
-            <div class="form-group">
-            <label>Message</label>
-            <textarea rows="6"
-                        formControlName="message"
-                        [class.invalid]="isSubmitted && f['message'].invalid"></textarea>
+                @if (successMessage) {
+                <p class="success-msg" role="alert">{{ successMessage }}</p>
+                }
+                @if (errorMessage) {
+                <p class="error-msg" role="alert">{{ errorMessage }}</p>
+                }
 
-            @if (isSubmitted && f['message'].errors?.['required']) {
-                <small>Message is required.</small>
-            }
-            </div>
+            </fieldset>
 
-            <button type="submit" class="btn-primary">
-            Submit
-            </button>
-
-            @if (successMessage) {
-                <p class="success-msg">{{ successMessage }}</p>
-            }
-
-            @if (errorMessage) {
-                <p class="error-msg">{{ errorMessage }}</p>
-            }
-
-        </form>
+            </form>
         </div>
 
-        <div class="contact-info-card">
-
-            <h2>Get in touch!</h2>
+        <div class="contact-info-card" role="region" aria-labelledby="contact-info-title">
+            <h2 id="contact-info-title">Get in touch!</h2>
             <p>Feel free to reach out if you'd like to work together!</p>
 
             <div class="contact-item">
-                <i class="bi bi-envelope-fill"></i>
-                <a href="mailto:yambaolorinrobelle@gmail.com">
-                <img src="images/mail-icon.png" alt="GMail" class="icon">
-                yambaolorinrobelle@gmail.com
-                </a>
+            <img src="images/mail-icon.png" alt="Gmail Icon" class="icon">
+            <a href="mailto:yambaolorinrobelle@gmail.com">yambaolorinrobelle@gmail.com</a>
             </div>
 
             <div class="contact-item">
-                <i class="bi bi-github"></i>
-                <a href="https://github.com/yambaolr" target="_blank">
-                <img src="images/github-icon.png" alt="Github" class="icon">
-                github.com/yambaolr
-                </a>
+            <img src="images/github-icon.png" alt="GitHub Icon" class="icon">
+            <a href="https://github.com/yambaolr" target="_blank">github.com/yambaolr</a>
             </div>
 
             <div class="contact-item">
-                <i class="bi bi-linkedin"></i>
-                <a href="https://linkedin.com/in/yambaolr" target="_blank">
-                <img src="images/linkedin-icon.png" alt="Linkedin" class="icon">
-                Lorin Robelle Yambao
-                </a>
+            <img src="images/linkedin-icon.png" alt="LinkedIn Icon" class="icon">
+            <a href="https://linkedin.com/in/yambaolr" target="_blank">Lorin Robelle Yambao</a>
             </div>
 
             <div class="contact-item">
-                <i class="bi bi-number"></i>
-                <a href="tel:+639692754224">
-                <img src="images/contact-icon.png" alt="Contact" class="icon">
-                +63 969-275-4224
-                </a>
+            <img src="images/contact-icon.png" alt="Phone Icon" class="icon">
+            <a href="tel:+639692754224">+63 969-275-4224</a>
             </div>
+
         </div>
-    </div>
-</section>
 
-<hr class="divider" />
+        </div>
+    </section>
 
-<section class="resume-section">
-    <h2 class="resume-title">Download My Resume</h2>
-    <p class="resume-description">
+    <hr class="divider" />
+
+    <section class="resume-section" aria-labelledby="resume-title">
+        <h2 id="resume-title" class="resume-title">Download My Resume</h2>
+        <p class="resume-description">
         Want to know more about my experience and skills? Download my resume here:
-    </p>
-    <a href="files/Yambao-Lorin-Robelle-Resume.pdf" download class="btn-resume">
+        </p>
+        <a href="files/Yambao-Lorin-Robelle-Resume.pdf" download class="btn-resume" aria-label="Download Resume PDF">
         Download Resume
-    </a>
-</section>
+        </a>
+    </section>
 
+</main>

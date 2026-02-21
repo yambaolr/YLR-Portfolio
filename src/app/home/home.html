@@ -1,137 +1,134 @@
-<section class="hero-section">
+<main>
 
-    <div class="hero-content">
+    <section class="hero-section" aria-labelledby="hero-title">
+        <div class="hero-content">
+
         <div class="hero-name">
-            <h1>
-                <span class="highlight">YAMBAO</span><br>
-                <span class="white">LORIN ROBELLE</span>
+            <h1 id="hero-title">
+            <span class="highlight">YAMBAO</span><br>
+            <span class="white">LORIN ROBELLE</span>
             </h1>
             <h3 class="subtitle">
-                > Web Development Student | Aspiring Backend Developer
+            &gt; Web Development Student | Aspiring Backend Developer
             </h3>
-            <div class="api-tag">
-                <span class="method">GET</span>
-                <span class="endpoint">/api/yambaolr</span>
-                <span class="status">200 OK</span>
-            </div>
 
+            <div class="api-tag" aria-label="API Info">
+            <span class="method">GET</span>
+            <span class="endpoint">/api/yambaolr</span>
+            <span class="status">200 OK</span>
+            </div>
         </div>
 
-        <div class="terminal-panel">
+        <div class="terminal-panel" role="region" aria-label="Portfolio status terminal panel">
             <div class="terminal-header">
-                <span class="dot red"></span>
-                <span class="dot yellow"></span>
-                <span class="dot green"></span>
-                <span class="terminal-title">ylrdev.exe</span>
+            <span class="dot red"></span>
+            <span class="dot yellow"></span>
+            <span class="dot green"></span>
+            <span class="terminal-title">ylrdev.exe</span>
             </div>
-
             <div class="terminal-body">
-                <p><span class="terminal-yellow">$</span> status</p>
-                <p>Inquisitive 3rd-year IT student</p>
+            <p><span class="terminal-yellow">$</span> status</p>
+            <p>Inquisitive 3rd-year IT student</p>
 
-                <p><span class="terminal-yellow">$</span> specialization</p>
-                <p>RESTful APIs • Database Design • Server Logic</p>
+            <p><span class="terminal-yellow">$</span> specialization</p>
+            <p>RESTful APIs • Database Design • Server Logic</p>
 
-                <p><span class="terminal-yellow">$</span> seeking</p>
-                <p>Backend Developer Internship</p>
+            <p><span class="terminal-yellow">$</span> seeking</p>
+            <p>Backend Developer Internship</p>
 
-                <p class="cursor">█</p>
+            <p class="cursor">█</p>
             </div>
         </div>
 
-    </div>
-
-    <div class="hero-actions">
-        <a routerLink="/projects" class="btn-primary">View Projects</a>
-        <a routerLink="/contact" class="btn-primary">Contact Me</a>
-    </div>
-
-</section>
-
-
-<hr class="divider"/>
-
-<section class="featured-projects container my-5">
-    <h2 class="text-center mb-3">Featured Projects</h2>
-    <p class="text-center text-muted mb-5">
-        A few projects that highlight my backend and web development skills.
-    </p>
-    <div class="row justify-content-center g-4 project-tiles">
-        <div class="col-md-4">
-            <div class="card project-card h-100">
-                <img src="images/iponly.png" class="card-img-top" alt="Project 1">
-                <div class="card-body d-flex flex-column">
-                <h5 class="card-title">Iponly - Budget Management Web App</h5>
-                <p class="card-text">
-                    Gamified budgeting web application with secure authentication, expense tracking, and leaderboard-based engagement.
-                </p>
-                <a routerLink="/projects" class="btn-secondary mt-auto">
-                    View Project
-                </a>
-                </div>
-            </div>
         </div>
 
-        <div class="col-md-4">
-            <div class="card project-card h-100">
-                <img src="images/the-garage.png" class="card-img-top" alt="Project 1">
-                <div class="card-body d-flex flex-column">
-                <h5 class="card-title">The Garage - Car Rental Website</h5>
-                <p class="card-text">
-                    Car rental system featuring admin management, rental workflows, and vehicle availability.
-                </p>
-                <a routerLink="/projects" class="btn-secondary mt-auto">
-                    View Project
-                </a>
-                </div>
-            </div>
+        <div class="hero-actions">
+        <a routerLink="/projects" class="btn-primary" aria-label="View Projects page">View Projects</a>
+        <a routerLink="/contact" class="btn-primary" aria-label="Go to Contact page">Contact Me</a>
         </div>
-
-    </div>
-
-    <div class="text-center mt-4 view-all">
-        <a routerLink="/projects" class="btn-primary">
-        View All Projects
-        </a>
-    </div>
     </section>
 
-<hr class="divider"/>
+    <hr class="divider"/>
 
-<section class="about-section">
-    <h2>Learn More About Me!</h2>
-    <p>View my skills, bio, and resume by clicking each bar.</p>
+    <section class="featured-projects container my-5" aria-labelledby="featured-projects-title">
+        <h2 id="featured-projects-title" class="text-center mb-3">Featured Projects</h2>
+        <p class="text-center text-muted mb-5">
+        A few projects that highlight my backend and web development skills.
+        </p>
 
-    <div class="graph-bars">
+        <div class="row justify-content-center g-4 project-tiles">
+
+        <article class="col-md-4">
+            <div class="card project-card h-100">
+            <img src="images/iponly.png" class="card-img-top" alt="Iponly Budget Management Web Application screenshot">
+            <div class="card-body d-flex flex-column">
+                <h3 class="card-title">Iponly - Budget Management Web App</h3>
+                <p class="card-text">
+                Gamified budgeting web application with secure authentication, expense tracking, and leaderboard-based engagement.
+                </p>
+                <a routerLink="/projects" class="btn-secondary mt-auto" aria-label="View full project details for Iponly">View Project</a>
+            </div>
+            </div>
+        </article>
+
+        <article class="col-md-4">
+            <div class="card project-card h-100">
+            <img src="images/the-garage.png" class="card-img-top" alt="The Garage Car Rental Website screenshot">
+            <div class="card-body d-flex flex-column">
+                <h3 class="card-title">The Garage - Car Rental Website</h3>
+                <p class="card-text">
+                Car rental system featuring admin management, rental workflows, and vehicle availability.
+                </p>
+                <a routerLink="/projects" class="btn-secondary mt-auto" aria-label="View full project details for The Garage">View Project</a>
+            </div>
+            </div>
+        </article>
+
+        </div>
+
+        <div class="text-center mt-4 view-all">
+        <a routerLink="/projects" class="btn-primary" aria-label="View all projects page">View All Projects</a>
+        </div>
+    </section>
+
+    <hr class="divider"/>
+
+    <section class="about-section" aria-labelledby="about-title">
+        <h2 id="about-title">Learn More About Me!</h2>
+        <p>View my skills, bio, and resume by clicking each bar.</p>
+
+        <div class="graph-bars">
 
         <div class="graph-bar-wrapper">
-            <a routerLink="/about" class="graph-bar bar-about">
-                <span class="bar-title">About ></span>
-                <span class="bar-desc">Personal Info & Skills</span>
+            <a routerLink="/about" class="graph-bar bar-about" aria-label="Go to About page">
+            <span class="bar-title">About &gt;</span>
+            <span class="bar-desc">Personal Info & Skills</span>
             </a>
         </div>
 
         <div class="graph-bar-wrapper">
-            <a routerLink="/projects" class="graph-bar bar-projects ">
-                <span class="bar-title">Projects ></span>
-                <span class="bar-desc">Programs & Contributions</span>
+            <a routerLink="/projects" class="graph-bar bar-projects" aria-label="Go to Projects page">
+            <span class="bar-title">Projects &gt;</span>
+            <span class="bar-desc">Programs & Contributions</span>
             </a>
         </div>
 
         <div class="graph-bar-wrapper">
-            <a routerLink="/contact" class="graph-bar bar-resume">
-                <span class="bar-title">Contact ></span>
-                <span class="bar-desc">Form & Resume</span>
+            <a routerLink="/contact" class="graph-bar bar-resume" aria-label="Go to Contact page">
+            <span class="bar-title">Contact &gt;</span>
+            <span class="bar-desc">Form & Resume</span>
             </a>
         </div>
 
-    </div>
-</section>
+        </div>
+    </section>
 
+    <hr class="divider"/>
 
-<hr class="divider"/>
+    <section class="contact-section" aria-labelledby="contact-title">
+        <h2 id="contact-title">// Let’s build something...</h2>
+        <p>Feel free to reach out to me for any inquiries, collaborations, or just to say hello! <br/> I'm always open to connecting with fellow developers, industry professionals, and anyone interested in my work.</p>
+        <a routerLink="/contact" class="btn-primary" aria-label="Go to Contact page">Contact Me</a>
+    </section>
 
-<section class="contact-section">
-    <h2>// Let’s build something...</h2>
-    <p>Feel free to reach out to me for any inquiries, collaborations, or just to say hello! <br/> I'm always open to connecting with fellow developers, industry professionals, and anyone interested in my work.</p>
-<a routerLink="/contact" class="btn-primary">Contact Me</a>
+</main>

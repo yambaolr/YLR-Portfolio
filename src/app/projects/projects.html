@@ -1,82 +1,87 @@
-<section class="projects-section">
-    <div class="terminal-header">
+<section class="projects-section" aria-labelledby="projects-title">
+    <h1 id="projects-title" class="projects-title">Projects</h1>
+
+    <div class="terminal-header" role="region" aria-label="Terminal header">
         <span class="dot red"></span>
         <span class="dot yellow"></span>
         <span class="dot green"></span>
         <span class="terminal-title">projects.sql</span>
     </div>
 
-    <div class="terminal-body">
+    <div class="terminal-body" role="region" aria-label="Query input and results">
         <div class="cli-line">
-        <span class="prompt">[yambaolr@portfolio]:~$</span>
-        <span class="command">SELECT</span> * 
-        <span class="command">FROM</span> projects
+            <span class="prompt" aria-hidden="true">[yambaolr@portfolio]:~$</span>
+            <span class="command">SELECT</span> * 
+            <span class="command">FROM</span> projects
         </div>
 
         <div class="cli-line">
-        <span class="command">WHERE</span> category =
-        <select (change)="filterProjects($event)">
-            <option value="ALL">'ALL'</option>
-            <option value="FULLSTACK">'FULLSTACK'</option>
-            <option value="API">'API'</option>
-            <option value="CMS">'CMS'</option>
-        </select>;
+            <label for="category-select" class="sr-only">Filter projects by category</label>
+            <span class="command">WHERE</span> category =
+            <select id="category-select" (change)="filterProjects($event)">
+                <option value="ALL">'ALL'</option>
+                <option value="FULLSTACK">'FULLSTACK'</option>
+                <option value="API">'API'</option>
+                <option value="CMS">'CMS'</option>
+            </select>;
         </div>
 
-        <div class="cli-output">
-        @if (isExecuting) {
-            <span class="executing">Executing query<span class="dots"></span></span>
-        } @else {
-            {{ rowsReturned }} row{{ rowsReturned === 1 ? '' : 's' }} in set ({{ executionTime }} sec)
-        }
+        <div class="cli-output" role="status">
+            @if (isExecuting) {
+                <span class="executing">Executing query<span class="dots"></span></span>
+            } @else {
+                {{ rowsReturned }} row{{ rowsReturned === 1 ? '' : 's' }} in set ({{ executionTime }} sec)
+            }
         </div>
     </div>
 
     @if(!isExecuting && filteredResults.length === 0) {
-        <div class="no-results">No projects found for the selected category.</div>
+        <div class="no-results" role="alert">No projects found for the selected category.</div>
     }
 
     <div class="projects-container">
         @for (project of filteredResults; track project.name) {
-        <div class="project-card">
-            <h2>{{ project.name }}</h2>
-            <p class="description">{{ project.description }}</p>
+            <article class="project-card" [attr.aria-labelledby]="getSafeId(project.name)">
+            <h2 [id]="getSafeId(project.name)">{{ project.name }}</h2>
+                <p class="description">{{ project.description }}</p>
+
             <div class="tech-stack">
-            <strong>Tech Stack:</strong>
-            @for (tech of project.techStack; track tech) {
-                <span class="tech">{{ tech }}</span>
-            }
+                <strong>Tech Stack:</strong>
+                @for (tech of project.techStack; track tech) {
+                    <span class="tech">{{ tech }}</span>
+                }
             </div>
 
             <div class="images">
-            @for (img of project.images; track img) {
-                <img 
-                    [src]="img" 
-                    alt="Project screenshot" 
-                    class="clickable-image"
-                    (click)="openImage(img, project)">
-            }
+                @for (img of project.images; track img) {
+                    <img 
+                        [src]="img" 
+                        alt="Screenshot of {{ project.name }} project" 
+                        class="clickable-image"
+                        (click)="openImage(img, project)"
+                        role="button"
+                        aria-label="Click to view full image">
+                }
             </div>
 
             <div class="links">
-            @if (project.liveDemo) {
-                <a [href]="project.liveDemo" target="_blank" class="btn">Live Demo</a>
-            }
-            @if (project.repository) {
-                <a [href]="project.repository" target="_blank" class="btn secondary">GitHub Repository</a>
-            }
+                @if (project.liveDemo) {
+                    <a [href]="project.liveDemo" target="_blank" class="btn" aria-label="View live demo of {{ project.name }}">Live Demo</a>
+                }
+                @if (project.repository) {
+                    <a [href]="project.repository" target="_blank" class="btn secondary" aria-label="View GitHub repository of {{ project.name }}">GitHub Repository</a>
+                }
             </div>
-        </div>
+        </article>
         }
     </div>
 
     @if(selectedImage) {
-        <div class="image-overlay" (click)="closeImage()">
-        <span class="close-btn" (click)="closeImage(); $event.stopPropagation()">×</span>
-        <span class="prev-btn" (click)="prevImage(); $event.stopPropagation()">&#60;</span>
-        <img [src]="selectedImage" alt="Expanded project image">
-        <span class="next-btn" (click)="nextImage(); $event.stopPropagation()">&#62;</span>
+        <div class="image-overlay" (click)="closeImage()" role="dialog" aria-modal="true" aria-label="Expanded project image">
+            <span class="close-btn" (click)="closeImage(); $event.stopPropagation()" aria-label="Close image">×</span>
+            <span class="prev-btn" (click)="prevImage(); $event.stopPropagation()" aria-label="Previous image">&#60;</span>
+            <img [src]="selectedImage" alt="Expanded project image">
+            <span class="next-btn" (click)="nextImage(); $event.stopPropagation()" aria-label="Next image">&#62;</span>
         </div>
     }
-
 </section>

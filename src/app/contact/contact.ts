@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { Title, Meta } from '@angular/platform-browser';
 import emailjs from '@emailjs/browser';
 
 @Component({
@@ -16,12 +17,26 @@ export class Contact {
   successMessage = '';
   errorMessage = '';
 
-  constructor(private fb: FormBuilder) {
+  constructor(
+    private fb: FormBuilder,
+    private titleService: Title,
+    private metaService: Meta
+  ) {
     this.contactForm = this.fb.group({
       name: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
       message: ['', Validators.required]
     });
+  }
+
+  ngOnit() {
+    this.titleService.setTitle('yambaolr | Portfolio - Contact');
+    this.metaService.addTags([
+    { name: 'description', content: 'Get in touch with Lorin Robelle Yambao (yambaolr) for backend development inquiries, collaborations, or to download her resume.' },
+    {  name: 'keywords', content: 'Contact, Backend Developer, IT Student, RESTful APIs, Node.js, Portfolio, Resume' },
+    { name: 'author', content: 'Lorin Robelle Yambao' }
+  ]);
+
   }
 
   get f() {
