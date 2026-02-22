@@ -33,6 +33,10 @@
   <router-outlet></router-outlet>
 </div>
 
+<button class="theme-toggle" (click)="toggleTheme()" aria-label="Toggle Dark/Light Mode">
+  {{ isLightMode ? '☀️' : '🌙' }}
+</button>
+
 <footer>
   <div class="footer-container">
 

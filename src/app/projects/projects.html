@@ -1,39 +1,42 @@
 <section class="projects-section" aria-labelledby="projects-title">
     <h1 id="projects-title" class="projects-title">Projects</h1>
 
-    <div class="terminal-header" role="region" aria-label="Terminal header">
-        <span class="dot red"></span>
-        <span class="dot yellow"></span>
-        <span class="dot green"></span>
-        <span class="terminal-title">projects.sql</span>
+    <div class="terminal-panel">
+        <div class="terminal-header" role="region" aria-label="Terminal header">
+            <span class="dot red"></span>
+            <span class="dot yellow"></span>
+            <span class="dot green"></span>
+            <span class="terminal-title">projects.sql</span>
+        </div>
+
+        <div class="terminal-body" role="region" aria-label="Query input and results">
+            <div class="cli-line">
+                <span class="prompt" aria-hidden="true">[yambaolr@portfolio]:~$</span>
+                <span class="command">SELECT</span> * 
+                <span class="command">FROM</span> projects
+            </div>
+
+            <div class="cli-line">
+                <label for="category-select" class="sr-only">Filter projects by category</label>
+                <span class="command">WHERE</span> category =
+                <select id="category-select" (change)="filterProjects($event)">
+                    <option value="ALL">'ALL'</option>
+                    <option value="FULLSTACK">'FULLSTACK'</option>
+                    <option value="API">'API'</option>
+                    <option value="CMS">'CMS'</option>
+                </select>;
+            </div>
+
+            <div class="cli-output" role="status">
+                @if (isExecuting) {
+                    <span class="executing">Executing query<span class="dots"></span></span>
+                } @else {
+                    {{ rowsReturned }} row{{ rowsReturned === 1 ? '' : 's' }} in set ({{ executionTime }} sec)
+                }
+            </div>
+        </div>
     </div>
 
-    <div class="terminal-body" role="region" aria-label="Query input and results">
-        <div class="cli-line">
-            <span class="prompt" aria-hidden="true">[yambaolr@portfolio]:~$</span>
-            <span class="command">SELECT</span> * 
-            <span class="command">FROM</span> projects
-        </div>
-
-        <div class="cli-line">
-            <label for="category-select" class="sr-only">Filter projects by category</label>
-            <span class="command">WHERE</span> category =
-            <select id="category-select" (change)="filterProjects($event)">
-                <option value="ALL">'ALL'</option>
-                <option value="FULLSTACK">'FULLSTACK'</option>
-                <option value="API">'API'</option>
-                <option value="CMS">'CMS'</option>
-            </select>;
-        </div>
-
-        <div class="cli-output" role="status">
-            @if (isExecuting) {
-                <span class="executing">Executing query<span class="dots"></span></span>
-            } @else {
-                {{ rowsReturned }} row{{ rowsReturned === 1 ? '' : 's' }} in set ({{ executionTime }} sec)
-            }
-        </div>
-    </div>
 
     @if(!isExecuting && filteredResults.length === 0) {
         <div class="no-results" role="alert">No projects found for the selected category.</div>

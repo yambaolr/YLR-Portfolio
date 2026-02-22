@@ -8,13 +8,13 @@ nav {
     display: flex;
     align-items: center;
     padding: 1rem 2rem;
-    background-color: #141414;
-    color: #fff;
+    background-color: var(--bg-nav);
+    color: var(--text-primary);
     position: sticky;
     top: 0;
     z-index: 1000;
     overflow: hidden;
-    border-bottom: 1px solid #4b4b4bb2;
+    border-bottom: 1px solid var(--border-muted);
 }
 
 nav .logo {
@@ -41,19 +41,19 @@ nav .name {
 }
 
 .nav-links a {
-    color: #fff;
+    color: var(--text-primary);
     text-decoration: none;
     margin-left: 2.5rem;
     font-size: 1.5rem;
 }
 
 .nav-links a:hover {
-    color: #9b9b9b;
+    color: var(--text-muted-alt);
 }
 
 .nav-links a.active {
-    color: #edb707;
-    border-bottom: 2px solid #facc15;
+    color: var(--color-accent);
+    border-bottom: 2px solid var(--color-accent-bright);
 }
 
 /* === Hamburger Menu === */
@@ -78,7 +78,7 @@ nav .name {
     position: absolute;
     width: 26px;
     height: 2px;
-    background: #fff;
+    background: var(--text-primary);
     border-radius: 2px;
     transition: all 0.3s ease;
 }
@@ -109,6 +109,32 @@ nav .name {
     top: 19px;
 }
 
+/* === Theme Toggle === */
+.theme-toggle {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: var(--bg-elevated);
+    color: var(--color-accent);
+    border: 1px solid var(--color-accent);
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: var(--card-hover);
+    transition: all 0.3s ease;
+    z-index: 10000;
+}
+
+.theme-toggle:hover {
+    transform: scale(1.1);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+}
+
 @media (max-width: 768px) {
     .hamburger {
         display: flex;
@@ -121,8 +147,8 @@ nav .name {
         right: 0;
         width: 50%;
         height: 100vh;
-        background: #141414;
-        border: 1px solid #3a3a3a;
+        background: var(--bg-nav);
+        border: 1px solid var(--border-subtle);
         flex-direction: column;
         align-items: flex-start;
         gap: 2rem;
@@ -144,7 +170,7 @@ nav .name {
         content: "";
         position: fixed;
         inset: 0;
-        background: rgba(0,0,0,0.5);
+        background: var(--bg-overlay-light);
         z-index: 999;
     }
 }
@@ -152,10 +178,10 @@ nav .name {
 /* === Footer === */
 footer {
     position: relative;
-    background-color: #141414;
-    border-top: 1px solid #3a3a3a;
+    background-color: var(--bg-nav);
+    border-top: 1px solid var(--border-subtle);
     padding: 3rem 4rem;
-    color: #b1b1b1;
+    color: var(--text-muted);
     font-size: 1.2em;
 }
 
@@ -169,7 +195,7 @@ footer::before {
     background: linear-gradient(
         to right,
         transparent,
-        rgba(237,183,7,0.6),
+        var(--accent-60),
         transparent
     );
 }
@@ -193,24 +219,24 @@ footer::before {
 }
 
 .prompt {
-    color: #edb707;
+    color: var(--color-accent);
     font-weight: bold;
 }
 
 .command {
-    color: #ffffff;
+    color: var(--text-primary);
 }
 
 .terminal-output {
     font-family: monospace;
-    color: #9b9b9b;
+    color: var(--text-muted-alt);
     font-size: 0.95rem;
 }
 
 .footer-links h4,
 .footer-social h4 {
     margin-bottom: 1rem;
-    color: #edb707;
+    color: var(--color-accent);
 }
 
 .footer-links {
@@ -220,14 +246,14 @@ footer::before {
 }
 
 .footer-links a {
-    color: #b1b1b1;
+    color: var(--text-muted);
     text-decoration: none;
     font-family: monospace;
     transition: color 0.2s ease;
 }
 
 .footer-links a:hover {
-    color: #edb707;
+    color: var(--color-accent);
 }
 
 .social-icons {
@@ -243,7 +269,7 @@ footer::before {
 
 .icon:hover {
     transform: translateY(-4px);
-    filter: drop-shadow(0 0 8px rgba(237, 183, 7, 0.318));
+    filter: drop-shadow(0 0 8px var(--accent-shadow-soft));
 }
 
 @media (max-width: 768px) {
@@ -279,7 +305,7 @@ footer::before {
     inset: 0;
     z-index: -1;
     pointer-events: none;
-    background-color: #0f0f0f;
+    background-color: var(--bg-global);
 }
 
 .global-bg::before {
@@ -287,7 +313,7 @@ footer::before {
     position: absolute;
     inset: 0;
     background:
-        linear-gradient(rgba(237,183,7,0.03) 1px, transparent 1px),
-        linear-gradient(to right, rgba(237,183,7,0.03) 1px, transparent 1px);
+        linear-gradient(var(--grid-line) 1px, transparent 1px),
+        linear-gradient(to right, var(--grid-line) 1px, transparent 1px);
     background-size: 60px 60px;
 }

@@ -5,7 +5,7 @@
 
 .page-title {
     font-size: 3rem;
-    color: #edb707;
+    color: var(--color-accent);
     margin-bottom: 2rem;
 }
 
@@ -30,47 +30,47 @@
 }
 
 .form-group label {
-    color: #9b9b9b;
+    color: var(--text-muted-alt);
     margin-bottom: 0.5rem;
 }
 
 .form-group input,
 .form-group textarea {
-    background-color: #1f1f1f;
-    border: 1px solid #4b4b4bb2;
+    background-color: var(--bg-primary);
+    border: 1px solid var(--border-muted);
     padding: 0.8rem;
-    color: #e0e0e0;
+    color: var(--text-secondary);
     width: 100%;
 }
 
 .form-group input:focus,
 .form-group textarea:focus {
     outline: none;
-    border-color: #edb707; 
+    border-color: var(--color-accent); 
 }
 
 .invalid {
-    border: 1px solid red !important;
+    border: 1px solid var(--error) !important;
 }
 
 small {
-    color: red;
+    color: var(--error);
     font-size: 0.8rem;
     margin-top: 0.3rem;
 }
 
 .success-msg {
-    background-color: #214d1f;
-    color: #b4f1a1;
-    border: 1px solid #b4f1a1;
+    background-color: var(--success);
+    color: var(--success-text);
+    border: 1px solid var(--success-text);
     padding: 1em;
     margin-top: 1em;
 }
 
 .error-msg {
-    background-color: #4d1f1f;
-    color: #f1a1a1;
-    border: 1px solid #f1a1a1;
+    background-color: var(--error-bg);
+    color: var(--error-text);
+    border: 1px solid var(--error-text);
     padding: 1em;
     margin-top: 1em;
 }
@@ -80,10 +80,10 @@ small {
     padding: 0.8em 2em;
     font-size: 1.1rem;
     font-weight: bold;
-    color: #edb707;
+    color: var(--color-accent);
     text-decoration: none;
-    background-color: #1f1f1f;
-    border: 1px solid #edb707;
+    background-color: var(--bg-primary);
+    border: 1px solid var(--border-primary);
     border-radius: 4px;
     transition: background-color 0.3s ease,
                 color 0.3s ease,
@@ -91,8 +91,8 @@ small {
 }
 
 .btn-primary:hover {
-    background-color: #edb707;
-    color: #141414;
+    background-color: var(--color-accent);
+    color: var(--bg-nav);
     transform: translateY(-3px);
 }
 
@@ -100,20 +100,20 @@ small {
 .contact-info-card {
     flex: 1;
     width: 80%;
-    background: linear-gradient(180deg, #303030 0%, #2a2a2a 100%);
-    border: 1px solid #4b4b4bb2;
-    border-right: 5px solid #edb707;
+    background: var(--bg-section);
+    border: 1px solid var(--border-muted);
+    border-right: 5px solid var(--color-accent);
     padding: 2rem;
-    box-shadow: 0 0 15px rgba(0,0,0,0.3);
+    box-shadow: var(--card-hover);
 }
 
 .contact-info-card h2 {
-    color: #edb707;
+    color: var(--color-accent);
     margin-bottom: 1rem;
 }
 
 .contact-info-card p {
-    color: #b1b1b1;
+    color: var(--text-muted);
     margin-bottom: 2rem;
 }
 
@@ -126,12 +126,12 @@ small {
 }
 
 .contact-item i {
-    color: #edb707;
+    color: var(--color-accent);
     font-size: 1.2rem;
 }
 
 .contact-item a {
-    color: #e0e0e0;
+    color: var(--text-secondary);
     text-decoration: none;
     display: flex;
     align-items: center;
@@ -140,7 +140,7 @@ small {
 }
 
 .contact-item a:hover {
-    color: #edb707;
+    color: var(--color-accent);
     text-decoration: underline;
     font-weight: bold;
 }
@@ -164,22 +164,22 @@ small {
     margin: 4rem auto;
     margin-bottom: 6em;
     padding: 3rem;
-    background: linear-gradient(180deg, #303030 0%, #2a2a2a 100%);
-    border: 1px solid #4b4b4bb2;
-    border-left: 5px solid #edb707;
+    background: var(--bg-section);
+    border: 1px solid var(--border-muted);
+    border-left: 5px solid var(--color-accent);
     text-align: center;
-    box-shadow: 0 0 15px rgba(0,0,0,0.3);
+    box-shadow: var(--card-hover);
 }
 
 .resume-title {
     font-size: 2.5rem;
-    color: #edb707;
+    color: var(--color-accent);
     margin-bottom: 1rem;
 }
 
 .resume-description {
     font-size: 1.1rem;
-    color: #d0d0d0;
+    color: var(--text-light);
     margin-bottom: 2rem;
 }
 
@@ -188,9 +188,9 @@ small {
     padding: 0.8em 2em;
     font-size: 1.1rem;
     font-weight: bold;
-    color: #edb707;
-    background-color: #1f1f1f;
-    border: 1px solid #edb707;
+    color: var(--color-accent);
+    background-color: var(--bg-primary);
+    border: 1px solid var(--color-accent);
     border-radius: 4px;
     text-decoration: none;
     transition: background-color 0.3s ease,
@@ -199,8 +199,8 @@ small {
 }
 
 .btn-resume:hover {
-    background-color: #edb707;
-    color: #141414;
+    background-color: var(--color-accent);
+    color: var(--bg-nav);
     transform: translateY(-3px);
 }
 
@@ -215,7 +215,7 @@ small {
         width: 90%;
         text-align: center;
         border-right: none;
-        border-bottom: 5px solid #edb707;
+        border-bottom: 5px solid var(--color-accent);
     }
 
     .contact-item {
