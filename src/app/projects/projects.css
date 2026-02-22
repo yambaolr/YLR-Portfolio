@@ -329,6 +329,11 @@
         border: 2px solid var(--color-accent);
         border-radius: 6px;
     }
+
+    .terminal-body select {
+        font-size: 0.85rem;
+        padding: 0.3rem 0.6rem;
+    }
 }
 
 @media (max-width: 576px) {
@@ -366,6 +371,15 @@
     .close-btn {
         top: 5px;
         right: 15px;
+    }
+
+    .terminal-body select {
+        font-size: 0.75rem;
+        padding: 0.25rem 0.5rem;
+    }
+
+    .terminal-body select option {
+        font-size: 0.5rem;
     }
 }
 
