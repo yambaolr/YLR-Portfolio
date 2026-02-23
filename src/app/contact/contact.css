@@ -75,27 +75,6 @@ small {
     margin-top: 1em;
 }
 
-.btn-primary {
-    display: inline-block;
-    padding: 0.8em 2em;
-    font-size: 1.1rem;
-    font-weight: bold;
-    color: var(--color-accent);
-    text-decoration: none;
-    background-color: var(--bg-primary);
-    border: 1px solid var(--border-primary);
-    border-radius: 4px;
-    transition: background-color 0.3s ease,
-                color 0.3s ease,
-                transform 0.3s ease;
-}
-
-.btn-primary:hover {
-    background-color: var(--color-accent);
-    color: var(--bg-nav);
-    transform: translateY(-3px);
-}
-
 /* ==== Contact Info Card ==== */
 .contact-info-card {
     flex: 1;
