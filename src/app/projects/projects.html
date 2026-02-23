@@ -69,10 +69,10 @@
 
             <div class="links">
                 @if (project.liveDemo) {
-                    <a [href]="project.liveDemo" target="_blank" class="btn" aria-label="View live demo of {{ project.name }}">Live Demo</a>
+                    <a [href]="project.liveDemo" target="_blank" class="btn-primary small" aria-label="View live demo of {{ project.name }}">Live Demo</a>
                 }
                 @if (project.repository) {
-                    <a [href]="project.repository" target="_blank" class="btn secondary" aria-label="View GitHub repository of {{ project.name }}">GitHub Repository</a>
+                    <a [href]="project.repository" target="_blank" class="btn-secondary small" aria-label="View GitHub repository of {{ project.name }}">GitHub Repository</a>
                 }
             </div>
         </article>

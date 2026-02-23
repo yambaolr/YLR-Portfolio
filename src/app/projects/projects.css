@@ -13,7 +13,7 @@
 /* === Terminal === */
 .terminal-panel {
     background: var(--bg-global);
-    border: 1px solid var(--border-soft);
+    border: 1px solid var(--border-muted);
     box-shadow: 0 0 35px var(--terminal-glow), inset 0 0 15px var(--terminal-glow-accent);
     margin-bottom: 3rem;
 }
@@ -147,6 +147,7 @@
     border-left: 6px solid var(--color-accent);
     padding: 2.5rem;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 0 15px var(--shadow-dark-soft);
 }
 
 .project-card:hover {
@@ -207,38 +208,14 @@
     transform: scale(1.05);
 }
 
-/* === Buttons === */
 .links {
     display: flex;
-    gap: 1.2rem;
-    flex-wrap: wrap;
+    gap: 1.5rem;
 }
 
-.btn {
-    padding: 0.7rem 1.8rem;
-    font-weight: bold;
-    text-decoration: none;
+.small {
+    padding: 0.6em 1.5em;
     font-size: 0.9rem;
-    border: 1px solid var(--color-accent);
-    color: var(--color-accent);
-    background-color: var(--bg-primary);
-    transition: all 0.3s ease;
-}
-
-.btn:hover {
-    background-color: var(--color-accent);
-    color: var(--bg-nav);
-    transform: translateY(-3px);
-}
-
-.btn.secondary {
-    border-color: var(--border-muted);
-    color: var(--text-soft);
-}
-
-.btn.secondary:hover {
-    background-color: var(--text-soft);
-    color: var(--text-dark);
 }
 
 /* === Image Overlay === */

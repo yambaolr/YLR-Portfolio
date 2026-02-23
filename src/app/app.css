@@ -14,7 +14,7 @@ nav {
     top: 0;
     z-index: 1000;
     overflow: hidden;
-    border-bottom: 1px solid var(--border-muted);
+    border-bottom: 1px solid var(--border-subtle);
 }
 
 nav .logo {
@@ -52,8 +52,8 @@ nav .name {
 }
 
 .nav-links a.active {
-    color: var(--color-accent);
-    border-bottom: 2px solid var(--color-accent-bright);
+    color: var(--color-accent-deep);
+    border-bottom: 2px solid var(--color-accent-deep);
 }
 
 /* === Hamburger Menu === */
@@ -219,7 +219,7 @@ footer::before {
 }
 
 .prompt {
-    color: var(--color-accent);
+    color: var(--color-accent-deep);
     font-weight: bold;
 }
 
@@ -236,7 +236,7 @@ footer::before {
 .footer-links h4,
 .footer-social h4 {
     margin-bottom: 1rem;
-    color: var(--color-accent);
+    color: var(--color-accent-deep);
 }
 
 .footer-links {
@@ -253,7 +253,7 @@ footer::before {
 }
 
 .footer-links a:hover {
-    color: var(--color-accent);
+    color: var(--text-primary);
 }
 
 .social-icons {
