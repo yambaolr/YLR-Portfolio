@@ -47,6 +47,29 @@ export class Projects implements OnInit {
       repository: 'https://github.com/tsAntonio25/6WCSERVER-Final-Project'
     },
     {
+      name: 'TeamUP! – Gamified IT & Development Freelance Services Marketplace',
+      type: 'FULLSTACK',
+      description: `
+        Developed backend APIs for authentication, role management,
+        experience tracking, and project/task management using Express.js and MongoDB.
+        Implemented secure authentication and CRUD operations with Mongoose.
+      `,
+      techStack: [
+        'Node.js',
+        'Express.js',
+        'MongoDB',
+        'Mongoose',
+        'JWT',
+        'Bcrypt'
+      ],
+      images: [
+        'images/teamup-1.png',
+        'images/teamup-2.png',
+        'images/teamup-3.png'
+      ],
+      repository: 'https://github.com/tsAntonio25/teamup'
+    },
+    {
       name: 'The Garage – Car Rental Website',
       type: 'FULLSTACK',
       description: `
