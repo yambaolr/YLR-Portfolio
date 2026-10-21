@@ -118,7 +118,24 @@ export class Projects implements OnInit {
       techStack: ['WordPress', 'SEO'],
       images: ['images/lusail-1.png', 'images/lusail-2.png'],
       liveDemo: 'https://lusailwaterstation.shop/'
+    },
+    {
+      name: 'St. Catherine of Alexandria Foundation and Medical Center – Informational Website',
+      type: 'FRONTEND',
+      description: `
+        Developed the frontend of an informational website for St. Catherine
+        of Alexandria Foundation and Medical Center using Next.js.
+        Created UI mockups with Figma and collaborated with the team
+        to document the website's structure, features, and functionality.
+      `,
+      techStack: ['Next.js', 'JavaScript', 'Figma'],
+      images: [
+        'images/st-catherine-1.png',
+        'images/st-catherine-2.png'
+      ],
+      repository: 'https://github.com/tsAntonio25/St-Catherine-Website'
     }
+
   ];
 
   ngOnInit() {
